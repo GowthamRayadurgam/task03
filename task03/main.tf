@@ -19,6 +19,7 @@ resource "azurerm_virtual_network" "vnet" {
   tags = {
     Creator = var.tag
   }
+  depends_on = [azurerm_resource_group.this]
 }
 
 resource "azurerm_subnet" "subnet1" {
@@ -26,13 +27,16 @@ resource "azurerm_subnet" "subnet1" {
   virtual_network_name = var.vnetname
   resource_group_name  = var.resource_group_name
   address_prefixes     = var.address_prefix_1
+  depends_on           = [azurerm_virtual_network.vnet]
 }
+
 
 resource "azurerm_subnet" "subnet2" {
   name                 = var.subnet2name
   virtual_network_name = var.vnetname
   resource_group_name  = var.resource_group_name
   address_prefixes     = var.address_prefix_2
+  depends_on           = [azurerm_virtual_network.vnet]
 }
 
 resource "azurerm_storage_account" "stacc" {
@@ -41,6 +45,7 @@ resource "azurerm_storage_account" "stacc" {
   location                 = azurerm_resource_group.this.location
   account_tier             = var.acctier
   account_replication_type = var.accreplication
+  depends_on               = [azurerm_resource_group.this]
 
   tags = {
     Creator = var.tag
