@@ -40,13 +40,14 @@ resource "azurerm_subnet" "subnet2" {
 }
 
 resource "azurerm_storage_account" "stacc" {
-  name                          = var.staccname
-  resource_group_name           = azurerm_resource_group.this.name
-  location                      = azurerm_resource_group.this.location
-  account_tier                  = var.acctier
-  account_replication_type      = var.accreplication
-  public_network_access_enabled = false
-  depends_on                    = [azurerm_resource_group.this]
+  name                            = var.staccname
+  resource_group_name             = azurerm_resource_group.this.name
+  location                        = azurerm_resource_group.this.location
+  account_tier                    = var.acctier
+  account_replication_type        = var.accreplication
+  allow_nested_items_to_be_public = false
+  public_network_access_enabled   = false
+  depends_on                      = [azurerm_resource_group.this]
 
   tags = {
     Creator = var.tag
