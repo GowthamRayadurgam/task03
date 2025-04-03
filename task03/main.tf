@@ -45,6 +45,7 @@ resource "azurerm_storage_account" "stacc" {
   location                 = azurerm_resource_group.this.location
   account_tier             = var.acctier
   account_replication_type = var.accreplication
+  public_network_access_enabled = false
   depends_on               = [azurerm_resource_group.this]
 
   tags = {
