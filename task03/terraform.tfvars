@@ -1,4 +1,4 @@
-acctier             = "Standard"
+acctier             = "Basic"
 accreplication      = "GRS"
 resource_group_name = "cmtr-4014a7a2-mod3-rg"
 staccname           = "cmtr4014a7a2sa1743686002"
