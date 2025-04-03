@@ -44,3 +44,18 @@ variable "address_prefix_2" {
   description = "address space for subnet"
   type        = list(string)
 }
+
+variable "staccname" {
+  description = "storage acc name"
+  type = string
+}
+
+variable "acctier" {
+  description = "storage account tier"
+  type = string
+}
+
+variable "accreplication" {
+  description = "storaga account replication"
+  type = string
+}
