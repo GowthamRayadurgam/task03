@@ -47,15 +47,15 @@ variable "address_prefix_2" {
 
 variable "staccname" {
   description = "storage acc name"
-  type = string
+  type        = string
 }
 
 variable "acctier" {
   description = "storage account tier"
-  type = string
+  type        = string
 }
 
 variable "accreplication" {
   description = "storaga account replication"
-  type = string
+  type        = string
 }
